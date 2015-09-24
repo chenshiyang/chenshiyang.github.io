@@ -41,16 +41,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="##题目如下：You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as">
+<meta name="description" content="题目如下：You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode OJ(2) Add two numbers">
 <meta property="og:url" content="http://chenshiyang.github.io/2015/09/24/LeetCode-OJ-2-Add-two-numbers/index.html">
 <meta property="og:site_name" content="Shiyang's blog">
-<meta property="og:description" content="##题目如下：You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as">
-<meta property="og:updated_time" content="2015-09-24T07:55:28.537Z">
+<meta property="og:description" content="题目如下：You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a">
+<meta property="og:updated_time" content="2015-09-24T11:30:44.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode OJ(2) Add two numbers">
-<meta name="twitter:description" content="##题目如下：You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as">
+<meta name="twitter:description" content="题目如下：You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -112,6 +112,14 @@
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
           </a>
         </li>
       
@@ -209,20 +217,18 @@
       
 
       
-        <span itemprop="articleBody"><p>##题目如下：<br>You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+        <span itemprop="articleBody"><h2 id="题目如下：">题目如下：</h2><p>You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
 <blockquote>
 <p>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 0 -&gt; 8</p>
 </blockquote>
 <p>原题链接在这<a href="https://leetcode.com/problems/add-two-numbers/" target="_blank" rel="external">传送门</a>。<br><a id="more"></a></p>
-<p>##大意：<br>给定两个数，这两个数的每个位分别倒序存放于两个链表中。要求计算这两个数的和，并把和按相同的方式放在链表中返回。例如，上面的例子是 342 + 465 = 807。</p>
-<p>##思路：<br>注意两个数是<strong>倒序</strong>存放在链表中的，这样我们就可以从两个链表头开始，一个元素一个元素地遍历链表。算法很简单，时间复杂度为O(max(m, n))。</p>
-<p>##注意：</p>
-<ol>
+<h2 id="大意：">大意：</h2><p>给定两个数，这两个数的每个位分别倒序存放于两个链表中。要求计算这两个数的和，并把和按相同的方式放在链表中返回。例如，上面的例子是 342 + 465 = 807。</p>
+<h2 id="思路：">思路：</h2><p>注意两个数是<strong>倒序</strong>存放在链表中的，这样我们就可以从两个链表头开始，一个元素一个元素地遍历链表。算法很简单，时间复杂度为O(max(m, n))。</p>
+<h2 id="注意：">注意：</h2><ol>
 <li>要考虑两个链表长度不一样时的情况。</li>
 <li>进位要注意，特别是两个链表都遍历完时，如果最后进位不为0，记得新建一个节点加上。</li>
 </ol>
-<p>##源码(java)</p>
-<ul>
+<h2 id="源码(java)">源码(java)</h2><ul>
 <li><p>solution 1</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (l1 == <span class="keyword">null</span>)</span><br><span class="line">		<span class="keyword">return</span> l2;</span><br><span class="line">	<span class="keyword">if</span> (l2 == <span class="keyword">null</span>)</span><br><span class="line">		<span class="keyword">return</span> l1;</span><br><span class="line"></span><br><span class="line">	ListNode header = l1;</span><br><span class="line">	ListNode mark = l1;</span><br><span class="line">	<span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (l1 != <span class="keyword">null</span> &amp;&amp; l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">		l1.val = l1.val + l2.val + carry;</span><br><span class="line">		carry = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (l1.val &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">			l1.val = l1.val - <span class="number">10</span>;</span><br><span class="line">			carry = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		mark = l1;</span><br><span class="line">		l1 = l1.next;</span><br><span class="line">		l2 = l2.next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (l1 == <span class="keyword">null</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (l2 == <span class="keyword">null</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (carry != <span class="number">0</span>)</span><br><span class="line">				mark.next = <span class="keyword">new</span> ListNode(carry);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">			mark.next = l2;</span><br><span class="line">			<span class="keyword">while</span> (l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">				l2.val = l2.val + carry;</span><br><span class="line">				carry = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">if</span> (l2.val &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">					l2.val = l2.val - <span class="number">10</span>;</span><br><span class="line">					carry = <span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				mark = l2;</span><br><span class="line">				l2 = l2.next;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//check the carry bit</span></span><br><span class="line">			<span class="keyword">if</span>(carry == <span class="number">1</span>)&#123;</span><br><span class="line">				mark.next = <span class="keyword">new</span> ListNode(<span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">while</span> (l1 != <span class="keyword">null</span>) &#123;</span><br><span class="line">			l1.val = l1.val + carry;</span><br><span class="line">			carry = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span> (l1.val &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">				l1.val = l1.val - <span class="number">10</span>;</span><br><span class="line">				carry = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			mark = l1;</span><br><span class="line">			l1 = l1.next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//check the carry bit</span></span><br><span class="line">		<span class="keyword">if</span>(carry == <span class="number">1</span>)&#123;</span><br><span class="line">			mark.next = <span class="keyword">new</span> ListNode(<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> header;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -313,7 +319,7 @@
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="lsdf#暂时没填连接" alt="ChenShiyang" itemprop="image"/>
+          <img class="site-author-image" src="/avatar/CSY.png" alt="ChenShiyang" itemprop="image"/>
           <p class="site-author-name" itemprop="name">ChenShiyang</p>
         </div>
         <p class="site-description motion-element" itemprop="description">Change the way you see the world to change the world you see.</p>
@@ -326,10 +332,10 @@
           </div>
 
           <div class="site-state-item site-state-categories">
-            
+            <a href="/categories">
               <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">分类</span>
-              
+              </a>
           </div>
 
           <div class="site-state-item site-state-tags">
@@ -352,6 +358,20 @@
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chenshiyang" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2638860282" target="_blank">weibo</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/chenshiyang" target="_blank">zhihu</a>
+              </span>
+            
+          
         </div>
 
         
@@ -369,7 +389,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目如下："><span class="nav-number">1.</span> <span class="nav-text">题目如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大意："><span class="nav-number">2.</span> <span class="nav-text">大意：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路："><span class="nav-number">3.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意："><span class="nav-number">4.</span> <span class="nav-text">注意：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码(java)"><span class="nav-number">5.</span> <span class="nav-text">源码(java)</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -630,6 +650,27 @@
   </script>
 
   
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
   
   
